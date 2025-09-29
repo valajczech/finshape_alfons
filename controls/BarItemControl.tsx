@@ -5,13 +5,16 @@ import { DismissFilled } from '@fluentui/react-icons';
 
 const BarChartValuesControl: AlfonsControl<TBarDataItem> = ({ fieldProps }) => {
     const { control, name } = fieldProps;
+    //? This works, however does not reflect changes automatically when changing presets...
+    //? That might be because of how Alfons internally works, and I am not familliar.
     const { fields, append, remove } = useFieldArray({ control, name });
 
+    //? Normally, I would use componentns from the UI library of choice when implementing controls/inspector fields.
     return (
         <div className="flex flex-col gap-3">
             {fields.map((item, index) => (
                 <div
-                    className="flex flex-row gap-2 rounded items-center bg-red-400 p-3"
+                    className="flex flex-row gap-2 rounded items-center p-3"
                     key={item.id}
                 >
                     <div className="flex w-28 flex-col gap-1">
@@ -24,7 +27,7 @@ const BarChartValuesControl: AlfonsControl<TBarDataItem> = ({ fieldProps }) => {
                             render={({ field }) => (
                                 <input
                                     {...field}
-                                    className="w-full rounded border p-1 text-black"
+                                    className="w-full rounded border p-1 "
                                     type="text"
                                 />
                             )}
