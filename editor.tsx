@@ -43,7 +43,7 @@ const BarChartItemSchema = $.object({
 });
 
 const BarChartValuesSchema = $.array(BarChartItemSchema).setupInspector({
-    control: '@alfons-app/effects-bar_chart_plugin:BarChartValuesControl',
+    control: '@valajczech/alfons-bar-chart-plugin:BarChartValuesControl',
     tab: 'DataArea20Filled',
     category: 'Data',
 });

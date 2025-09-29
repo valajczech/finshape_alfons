@@ -2,11 +2,11 @@
     "alfons": true,
     "author": "Jiri Vala",
     "dependencies": {
-        "@alfons-app/effects-bar_chart_plugin": "./",
         "@alfons-app/pdk": "0.11.1",
         "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
         "@babel/preset-env": "^7.28.3",
         "@fluentui/react-icons": "^2.0.311",
+        "@valajczech/alfons-bar-chart-plugin": "./",
         "expo-linear-gradient": "~15.0.7",
         "react-hook-form": "^7.63.0",
         "react-native": "^0.81.4",
@@ -44,7 +44,7 @@
         ]
     },
     "license": "",
-    "name": "@alfons-app/effects-bar_chart_plugin",
+    "name": "@valajczech/alfons-bar-chart-plugin",
     "peerDependencies": {
         "react": "19.1.0"
     },
