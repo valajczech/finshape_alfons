@@ -1,4 +1,4 @@
-# @valajczech/alfons-bar-chart-plugin
+# @valajnpm/alfons-bar-chart-plugin
 
 This is a Bar Chart Plugin for Alfons - the visual React IDE.
 
@@ -7,7 +7,7 @@ This is a Bar Chart Plugin for Alfons - the visual React IDE.
 Use `bun` to install the plugin from the NPM registry:
 
 ```bash
-bun install @valajczech/alfons-bar-chart-plugin
+bun install @valajnpm/alfons-bar-chart-plugin
 ```
 
 ## Usage
