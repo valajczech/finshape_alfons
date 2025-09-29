@@ -1,6 +1,6 @@
 import type { TestProps } from '@alfons-app/pdk';
 import { renderHook } from '@testing-library/react-hooks';
-import barChartPluginEffect from './index';
+import barChartPlugin from './index';
 import definition from './editor';
 
 const getMockTestProps = (testID: string = 'test') => ({ testID, ['data-test-id']: testID }) as TestProps;
@@ -15,7 +15,7 @@ describe('effects-bar_chart_plugin', () => {
       children: [],
     };
 
-    renderHook(() => barChartPluginEffect(props));
+    renderHook(() => barChartPlugin(props));
     
     expect(consoleSpy).toHaveBeenCalledWith('barChartPluginEffect', props);
 

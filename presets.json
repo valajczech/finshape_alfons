@@ -1,15 +1,105 @@
 {
-    "default": {
+    "gradient_bars": {
+        "animationDuration": 600,
         "data": [
             {
-                "value": 1
+                "label": "Sales Q1",
+                "style": {
+                    "frontColor": "#3b82f6",
+                    "showGradient": true
+                },
+                "value": 45
             },
             {
-                "value": 2
+                "label": "Sales Q2",
+                "style": {
+                    "barWidth": 30,
+                    "frontColor": "#22c55e",
+                    "showGradient": true
+                },
+                "value": 60
             },
             {
-                "value": 3
+                "label": "Sales Q3",
+                "style": {
+                    "frontColor": "#f59e0b",
+                    "showGradient": true
+                },
+                "value": 35
+            },
+            {
+                "label": "Sales Q4",
+                "style": {
+                    "frontColor": "#ef4444",
+                    "showGradient": true
+                },
+                "value": 80
             }
-        ]
+        ],
+        "height": 300,
+        "isAnimated": true,
+        "width": 400
+    },
+
+    "mixed_custom_styles": {
+        "animationDuration": 500,
+        "data": [
+            {
+                "label": "Custom 1",
+                "style": {
+                    "barBorderRadius": 2,
+                    "barWidth": 20,
+                    "frontColor": "#1d4ed8"
+                },
+                "value": 70
+            },
+            {
+                "label": "Custom 2",
+                "style": {
+                    "barWidth": 35,
+                    "frontColor": "#9333ea",
+                    "showGradient": true
+                },
+                "value": 55
+            },
+            {
+                "label": "Custom 3",
+                "style": {
+                    "barWidth": 25,
+                    "frontColor": "#16a34a"
+                },
+                "value": 40
+            }
+        ],
+        "defaultBarStyle": {
+            "barBorderRadius": 8
+        },
+        "height": 280,
+        "isAnimated": true,
+        "width": 360
+    },
+
+    "rounded_styled_bars": {
+        "animationDuration": 400,
+        "data": [
+            {
+                "label": "A",
+                "style": { "barBorderRadius": 20, "frontColor": "#8b5cf6" },
+                "value": 12
+            },
+            {
+                "label": "B",
+                "style": { "barBorderRadius": 20, "frontColor": "#ec4899" },
+                "value": 24
+            },
+            {
+                "label": "C",
+                "style": { "barBorderRadius": 20, "frontColor": "#10b981" },
+                "value": 36
+            }
+        ],
+        "height": 220,
+        "isAnimated": true,
+        "width": 320
     }
 }

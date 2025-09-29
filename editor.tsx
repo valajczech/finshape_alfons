@@ -1,33 +1,89 @@
-import { type PluginDefinition, createSchemaBuilder } from '@alfons-app/pdk';
+import {
+    InspectorTabs,
+    type PluginDefinition,
+    createSchemaBuilder,
+} from '@alfons-app/pdk';
 import { name } from './package.json';
 import type Zod from 'zod';
-import { Group2Line } from '@fluent-ui/icons';
-import type { barDataItem as BarDataItemType } from 'react-native-gifted-charts';
+import BarChartValuesControl from './controls/BarItemControl';
+import { DataArea20Regular } from '@fluentui/react-icons';
 
 const $ = createSchemaBuilder(name);
 
-// const BarChartItemSchema = $.number({
-//     required_error: 'The value cannot be undefined',
-// })
-//     .finite()
-//     .describe('KEK!')
-
-// TODO: this should satisfy the type barDataItem from the library
-const BarChartValueSchema: Zod.ZodType<BarDataItemType> = $.object({
-    value: $.number().finite(),
+const BarStyleSchema = $.object({
+    frontColor: $.string().optional().setupInspector({
+        control: 'ColorPicker',
+        tab: InspectorTabs.Style,
+    }),
+    barWidth: $.number().default(25).setupInspector({
+        control: 'Numeric',
+        tab: InspectorTabs.Style,
+    }),
+    barBorderRadius: $.number().optional().default(10).setupInspector({
+        control: 'Numeric',
+        tab: InspectorTabs.Style,
+    }),
+    showGradient: $.boolean().default(false).setupInspector({
+        control: 'Checkbox',
+        tab: InspectorTabs.Style,
+    }),
 });
 
-const BarCharSchema = $.object({
-    data: $.array(BarChartValueSchema).default([]).setupInspector({
-        control: 'Data[]',
+const BarChartItemSchema = $.object({
+    value: $.number().finite().setupInspector({
+        control: 'Numeric',
+    }),
+    label: $.string().setupInspector({
+        control: 'Text',
+    }),
+
+    style: BarStyleSchema.optional().describe(
+        'Defines the style of this particular bar.'
+    ),
+});
+
+const BarChartValuesSchema = $.array(BarChartItemSchema).setupInspector({
+    control: '@alfons-app/effects-bar_chart_plugin:BarChartValuesControl',
+    tab: 'DataArea20Filled',
+    category: 'Data',
+});
+
+export type BarChartValuesType = Zod.infer<typeof BarChartValuesSchema>;
+
+const BarChartSchema = $.object({
+    data: BarChartValuesSchema.default([]),
+    defaultBarStyle: BarStyleSchema.optional().describe(
+        'Definesstyles which will get propagated to all bars in the chart.'
+    ),
+    height: $.number()
+        .default(250)
+        .describe('Sets the chart height')
+        .setupInspector({
+            control: 'Numeric',
+        }),
+    width: $.number()
+        .default(250)
+        .describe('Sets the chart width')
+        .setupInspector({
+            control: 'Numeric',
+        }),
+    isAnimated: $.boolean()
+        .default(true)
+        .setupInspector({ control: 'Checkbox', tab: InspectorTabs.Animation }),
+
+    animationDuration: $.number().default(250).setupInspector({
+        control: 'Numeric',
+        tab: InspectorTabs.Animation,
     }),
 });
 
 const Definition = {
-    // FIXME: Icon
-    Icon: () => <Group2Line />,
-    schema: BarCharSchema,
+    Icon: () => <DataArea20Regular />,
+    schema: BarChartSchema,
     shouldAllowChild: () => () => false,
+    controls: {
+        BarChartValuesControl,
+    },
 } satisfies PluginDefinition;
 
 export default Definition;

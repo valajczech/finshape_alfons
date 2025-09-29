@@ -1,3 +1,17 @@
 {
-    "__name__": "BarChartPlugin"
+    "__name__": "BarChartPlugin",
+
+    "__preset__.gradient_bars": "Gradient Bars",
+    "__preset__.mixed_custom_styles": "Mixed Custom Styles",
+    "__preset__.rounded_styled_bars": "Rounded bars",
+
+    "__property__.animationDuration": "Animation duration",
+    "__property__.data": "Values",
+    "__property__.defaultBarStyle.barBorderRadius": "Bar Radius",
+    "__property__.defaultBarStyle.barWidth": "Bar Width",
+    "__property__.defaultBarStyle.frontColor": "Bar Color",
+    "__property__.defaultBarStyle.showGradient": "Gradient",
+    "__property__.height": "Height",
+    "__property__.isAnimated": "Use animations",
+    "__property__.width": "Width"
 }

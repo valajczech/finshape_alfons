@@ -1,3 +1,15 @@
 {
-    "__name__": "BarChartPlugin"
+    "__name__": "BarChartPlugin",
+
+    "__preset__.gradient_bars": "Graf s gradientem",
+    "__preset__.mixed_custom_styles": "Mix stylů",
+    "__preset__.rounded_styled_bars": "Zakulacené bary",
+
+    "__property__.animationDuration": "Délka animace",
+    "__property__.data": "Hodnoty",
+    "__property__.defaultBarStyle.barBorderRadius": "Radius",
+    "__property__.defaultBarStyle.barWidth": "Šířka Baru",
+    "__property__.defaultBarStyle.frontColor": "Barva Baru",
+    "__property__.defaultBarStyle.showGradient": "Gradient",
+    "__property__.isAnimated": "Použít animace"
 }
